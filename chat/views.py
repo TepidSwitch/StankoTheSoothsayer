@@ -25,7 +25,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows conversations to be viewed or edited.
     """
-    queryset = Conversation.objects.all()
+    queryset = Conversation.objects.all().order_by('id')
     serializer_class = ConversationSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     
@@ -33,6 +33,6 @@ class ChatMessageViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows chat messages to be viewed.
     """
-    queryset = ChatMessage.objects.all()
+    queryset = ChatMessage.objects.all().order_by('id')
     serializer_class = ChatMessageSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
