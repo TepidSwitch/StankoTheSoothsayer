@@ -1,5 +1,5 @@
 """
-URL configuration for stankothesoothsayer project.
+URL configuration for stankothesoothsayerdjango project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from .stanko import views
+from stanko import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
