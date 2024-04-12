@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--z)gv*)a^x-20v89%m&rtaty5wfcg*%#fw+$i%h5vf^xjz3&zq'
+SECRET_KEY = 'django-insecure-p!@q0k2d*djwe+2#_mbnf$4=$md0&meujq1xwiu)g#r*^ih-sr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'user_visit',
-    # 'api',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -129,4 +129,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS
-CORS_ORIGIN_ALLOW_ALL = True # remove this in production
+CORS_ORIGIN_ALLOW_ALL = True #TODO: remove this in production
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
