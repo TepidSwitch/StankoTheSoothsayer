@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'user_visit',
     'django_extensions',
-    'stanko',
+    'chat',
     'authentication',
 ]
 
